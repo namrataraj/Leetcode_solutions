@@ -1,0 +1,23 @@
+/*Given a binary array nums, return the maximum number of consecutive 1's in the array.*/
+class Solution {
+public:
+    int findMaxConsecutiveOnes(vector<int>& nums) {
+        int m=INT_MIN;
+        int c=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]==1)
+            {
+                c++;
+                m=max(m,c);
+            }
+            else
+            c=0;
+        }
+        if(m==INT_MIN)
+        return 0;
+        else
+        return m;
+        
+    }
+};
